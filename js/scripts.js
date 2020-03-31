@@ -39,7 +39,7 @@ $(document).ready(function() {
       
       numbers.forEach(function(number) {
         // prettyNumbers += "<li>" + number + "</li>";
-        $(".output").append("<li>" + number + "</li>");
+        $(".output").html("<li>" + number + "</li>");
       })
 
       // $(".output").html(prettyNumbers);
