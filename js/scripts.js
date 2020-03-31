@@ -25,7 +25,8 @@ $(document).ready(function() {
     var numbers = [];
     // var prettyNumbers = "";
     console.log(input1, input2);
-    if (isNaN(input1)|| input2 === NaN || input1 <= 0 || input2 <= 0 || input1 < input2) {
+
+    if (isNaN(input1) || isNaN(input2) || input1 <= 0 || input2 <= 0 || input1 < input2) {
       $(".output").html("<li>Not a Num</li>")
     // } else if (input2 <= 0) {
     //   $(".output").html("Not a Num")
