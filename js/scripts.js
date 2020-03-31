@@ -23,11 +23,23 @@ $(document).ready(function() {
     var input1 = parseInt($("#input-1").val());
     var input2 = parseInt($("#input-2").val());
     var numbers = [];
+    var prettyNumbers = [];
+
+    if (input2 <= 0) {
+      $(".output").append("input larger number")
+    } else if (input1 <= 0) {
+      $(".output").append("input larger number")
+    }
 
     for (index = 0; index < input1; index += input2) {
       numbers.push(index);
       console.log(index);
     }
-    $(".output").append(numbers);
+    
+    numbers.forEach(function(number) {
+      prettyNumbers.push(number + ", " + " ");
+    })
+    
+    $(".output").append(prettyNumbers);
   });
 });
