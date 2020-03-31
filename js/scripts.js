@@ -23,23 +23,26 @@ $(document).ready(function() {
     var input1 = parseInt($("#input-1").val());
     var input2 = parseInt($("#input-2").val());
     var numbers = [];
-    var prettyNumbers = [];
+    // var prettyNumbers = "";
+    console.log(input1, input2);
+    if (isNaN(input1)|| input2 === NaN || input1 <= 0 || input2 <= 0 || input1 < input2) {
+      $(".output").html("<li>Not a Num</li>")
+    // } else if (input2 <= 0) {
+    //   $(".output").html("Not a Num")
+    } else {
+      
+      for (index = 0; index <= input1; index += input2) {
+        numbers.push(index);
+        console.log(index);
+      }
+      
+      numbers.forEach(function(number) {
+        // prettyNumbers += "<li>" + number + "</li>";
+        $(".output").append("<li>" + number + "</li>");
+      })
 
-    if (input2 <= 0) {
-      $(".output").append("input larger number")
-    } else if (input1 <= 0) {
-      $(".output").append("input larger number")
+      // $(".output").html(prettyNumbers);
     }
 
-    for (index = 0; index < input1; index += input2) {
-      numbers.push(index);
-      console.log(index);
-    }
-    
-    numbers.forEach(function(number) {
-      prettyNumbers.push(number + ", " + " ");
-    })
-    
-    $(".output").append(prettyNumbers);
   });
 });
